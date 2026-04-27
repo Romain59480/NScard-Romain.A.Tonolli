@@ -1,134 +1,161 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NScard.R.A.Tonolli</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NScard.R.A.Tonolli</title>
 
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #1b2735, #090a0f 70%);
-      color: #f4f4f4;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+body {
+font-family: Arial, sans-serif;
+background: radial-gradient(circle at top, #1b2735, #090a0f 70%);
+color: #f4f4f4;
+line-height: 1.6;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0,255,200,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,255,200,0.04) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: -1;
-    }
+/* effet grille */
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+background-image:
+linear-gradient(rgba(0,255,200,0.04) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,255,200,0.04) 1px, transparent 1px);
+background-size: 40px 40px;
+z-index: -1;
+}
 
-    .page { max-width: 1100px; margin: auto; padding: 35px 18px; }
+.page {
+max-width: 1100px;
+margin: auto;
+padding: 30px;
+}
 
-    .hero {
-      padding: 45px;
-      border-radius: 24px;
-      background: rgba(15, 20, 30, 0.92);
-      border: 1px solid rgba(0,255,200,0.25);
-      box-shadow: 0 0 35px rgba(0,255,200,0.12);
-    }
+.hero {
+display: flex;
+gap: 30px;
+align-items: center;
+background: rgba(15,20,30,0.9);
+padding: 30px;
+border-radius: 20px;
+border: 1px solid rgba(0,255,200,0.3);
+box-shadow: 0 0 25px rgba(0,255,200,0.15);
+}
 
-    .badge {
-      display: inline-block;
-      padding: 7px 12px;
-      border: 1px solid rgba(0,255,200,0.4);
-      color: #00ffd0;
-      border-radius: 999px;
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
+.hero img {
+width: 180px;
+height: 180px;
+object-fit: cover;
+border-radius: 50%;
+border: 3px solid #00ffd0;
+box-shadow: 0 0 20px rgba(0,255,200,0.4);
+}
 
-    h1 { font-size: 46px; margin-bottom: 8px; }
+h1 {
+font-size: 36px;
+}
 
-    .job {
-      font-size: 23px;
-      color: #00ffd0;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
+.job {
+color: #00ffd0;
+font-size: 20px;
+margin-bottom: 10px;
+}
 
-    .tagline { max-width: 850px; color: #d7d7d7; }
+.tagline {
+color: #ccc;
+}
 
-    .buttons { display: flex; gap: 12px; margin-top: 25px; }
+.buttons {
+margin-top: 15px;
+}
 
-    .btn {
-      text-decoration: none;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: bold;
-      background: #00ffd0;
-      color: #06110f;
-    }
+.btn {
+display: inline-block;
+padding: 10px 15px;
+margin-right: 10px;
+border-radius: 8px;
+background: #00ffd0;
+color: #000;
+text-decoration: none;
+font-weight: bold;
+}
 
-    .btn.secondary {
-      background: transparent;
-      color: #fff;
-      border: 1px solid #555;
-    }
+.btn.secondary {
+background: transparent;
+border: 1px solid #00ffd0;
+color: #fff;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 25px;
-    }
+.grid {
+margin-top: 25px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+}
 
-    .card {
-      background: rgba(18,24,35,0.92);
-      padding: 22px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
+.card {
+background: rgba(20,25,35,0.9);
+padding: 20px;
+border-radius: 15px;
+border: 1px solid rgba(255,255,255,0.1);
+transition: 0.3s;
+}
 
-    .full { grid-column: 1 / -1; }
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 0 15px rgba(0,255,200,0.2);
+}
 
-    h2 {
-      margin-bottom: 10px;
-      border-bottom: 1px solid rgba(0,255,200,0.25);
-      padding-bottom: 5px;
-    }
+.full {
+grid-column: 1 / -1;
+}
 
-    ul { padding-left: 20px; }
+h2 {
+margin-bottom: 10px;
+border-bottom: 1px solid rgba(0,255,200,0.3);
+padding-bottom: 5px;
+}
 
-    .contact { line-height: 1.7; }
+ul {
+padding-left: 20px;
+}
 
-    .footer {
-      text-align: center;
-      margin-top: 30px;
-      color: #aaa;
-    }
+.footer {
+text-align: center;
+margin-top: 30px;
+color: #aaa;
+}
 
-    @media (max-width: 760px) {
-      .grid { grid-template-columns: 1fr; }
-      h1 { font-size: 34px; }
-    }
-  </style>
+@media (max-width: 800px) {
+.hero {
+flex-direction: column;
+text-align: center;
+}
+.grid {
+grid-template-columns: 1fr;
+}
+}
+</style>
 </head>
 
 <body>
 
-<main class="page">
+<div class="page">
 
-<section class="hero">
+<div class="hero">
 
+<img src="photo.jpg" alt="Romain Tonolli">
+
+<div>
 <div class="badge">NScard.R.A.Tonolli</div>
-
 <h1>Romain Tonolli</h1>
 <div class="job">Technicien industriel polyvalent</div>
 
 <p class="tagline">
-Technicien industriel formé sur le terrain, spécialisé en qualité, production, outillage et maintenance.
-J’allie la rigueur du travail bien fait, la précision technique et une forte capacité d’adaptation aux outils modernes.
+Technicien industriel formé sur le terrain, entre rigueur mécanique et adaptation numérique.
+Je combine expérience, précision et intelligence des systèmes modernes.
 </p>
 
 <div class="buttons">
@@ -136,36 +163,20 @@ J’allie la rigueur du travail bien fait, la précision technique et une forte 
 <a class="btn secondary" href="tel:+33601840379">Appeler</a>
 </div>
 
-</section>
-
-<section class="grid">
-
-<div class="card">
-<h2>Profil</h2>
-<p>Professionnel sérieux, autonome et rigoureux, avec une forte expérience en environnement industriel exigeant.</p>
-</div>
-
-<div class="card">
-<h2>Contact</h2>
-<div class="contact">
-📍 Valenciennes<br>
-📧 romain.tonolli@aol.fr<br>
-📞 06 01 84 03 79<br>
-🚗 Permis B + véhicule
 </div>
 </div>
+
+<div class="grid">
 
 <div class="card full">
-<h2>Compétences clés</h2>
-<ul>
-<li>Contrôle qualité industriel</li>
-<li>Maintenance de moules</li>
-<li>Soudage laser</li>
-<li>Production industrielle</li>
-<li>Fonderie cire perdue</li>
-<li>Presses d’injection</li>
-<li>Informatique Hardware & IA</li>
-</ul>
+<h2>Vision & état d’esprit</h2>
+<p>
+Je suis issu d’une génération qui a connu le travail concret, l’effort réel et la rigueur du terrain.
+Aujourd’hui, j’ai choisi d’évoluer avec mon époque en intégrant les outils modernes et numériques.
+</p>
+<p>
+Je combine mon expérience de vie, mon sens du détail et ma capacité d’analyse avec une volonté constante de progression.
+</p>
 </div>
 
 <div class="card full">
@@ -173,38 +184,49 @@ J’allie la rigueur du travail bien fait, la précision technique et une forte 
 <p><strong>ATS Groupe Marles – Alès (2023–2026)</strong></p>
 <ul>
 <li>Technicien outilleur</li>
-<li>Maintenance et réparation de moules</li>
+<li>Maintenance complète de moules d’injection</li>
 <li>Soudage laser</li>
-<li>Essais conformité</li>
+<li>Essais et validation conformité</li>
 <li>Supervision atelier cire</li>
 </ul>
 </div>
 
 <div class="card">
-<h2>Formation</h2>
+<h2>Compétences industrielles</h2>
 <ul>
-<li>Bac Pro Productique</li>
-<li>BEP / CAP Microtechnique</li>
+<li>Contrôle qualité</li>
+<li>Production industrielle</li>
+<li>Maintenance de moules</li>
+<li>Fonderie cire perdue</li>
+<li>Presses injection</li>
 </ul>
 </div>
 
 <div class="card">
-<h2>Atouts</h2>
+<h2>Informatique & IA</h2>
 <ul>
-<li>Rigueur</li>
-<li>Autonomie</li>
-<li>Adaptabilité</li>
-<li>Esprit analytique</li>
+<li>Montage PC Hardware</li>
+<li>Diagnostic systèmes</li>
+<li>Utilisation IA</li>
+<li>Adaptation technologique</li>
 </ul>
 </div>
 
-</section>
-
-<div class="footer">
-Disponible immédiatement
+<div class="card full">
+<h2>Approche humaine & pédagogique</h2>
+<p>
+Formé en comportementalisme, j’ai développé une capacité à analyser et transmettre efficacement.
+Cette compétence me permet d’être à l’aise en équipe et dans la formation.
+</p>
 </div>
 
-</main>
+</div>
+
+<div class="footer">
+📞 06 01 84 03 79 — Disponible immédiatement
+</div>
+
+</div>
 
 </body>
 </html>
