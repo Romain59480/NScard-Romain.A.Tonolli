@@ -3,152 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Romain Tonolli - Technicien Industriel</title>
+  <title>Romain Tonolli | Technicien Industriel</title>
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f1115;
-      color: #f5f5f5;
+      background: radial-gradient(circle at top, #1b2735, #090a0f 70%);
+      color: #f4f4f4;
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,255,200,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,200,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: -1;
     }
 
     .page {
-      max-width: 1050px;
+      max-width: 1100px;
       margin: auto;
-      padding: 30px 18px;
+      padding: 35px 18px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #1b1f2a, #111318);
-      border: 1px solid #2a2f3a;
-      border-radius: 18px;
-      padding: 35px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      position: relative;
+      padding: 45px;
+      border-radius: 24px;
+      background: rgba(15, 20, 30, 0.92);
+      border: 1px solid rgba(0,255,200,0.25);
+      box-shadow: 0 0 35px rgba(0,255,200,0.12);
+      overflow: hidden;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 42px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 220px;
+      height: 220px;
+      background: rgba(0,255,200,0.15);
+      filter: blur(45px);
+      border-radius: 50%;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 12px;
+      border: 1px solid rgba(0,255,200,0.4);
+      color: #00ffd0;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 18px;
       letter-spacing: 1px;
     }
 
+    h1 {
+      font-size: 46px;
+      margin-bottom: 8px;
+    }
+
     .job {
-      color: #00d1b2;
-      font-size: 22px;
-      margin-top: 8px;
+      font-size: 23px;
+      color: #00ffd0;
       font-weight: bold;
+      margin-bottom: 20px;
     }
 
     .tagline {
-      margin-top: 18px;
       max-width: 850px;
-      color: #d6d6d6;
+      color: #d7d7d7;
       font-size: 17px;
     }
 
     .buttons {
-      margin-top: 25px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      margin-top: 28px;
     }
 
     .btn {
       text-decoration: none;
-      color: #0f1115;
-      background: #00d1b2;
-      padding: 12px 18px;
-      border-radius: 10px;
+      padding: 13px 19px;
+      border-radius: 12px;
       font-weight: bold;
+      color: #06110f;
+      background: #00ffd0;
+      box-shadow: 0 0 18px rgba(0,255,200,0.25);
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(0,255,200,0.45);
     }
 
     .btn.secondary {
       background: transparent;
-      color: #f5f5f5;
-      border: 1px solid #3d4350;
+      color: #f4f4f4;
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow: none;
     }
 
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 22px;
-      margin-top: 25px;
+      margin-top: 26px;
     }
 
     .card {
-      background: #171a21;
-      border: 1px solid #2a2f3a;
-      border-radius: 16px;
-      padding: 24px;
+      background: rgba(18, 24, 35, 0.92);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      transition: 0.25s;
     }
 
-    h2 {
-      margin-top: 0;
-      color: #ffffff;
-      border-bottom: 1px solid #333946;
-      padding-bottom: 8px;
-      font-size: 22px;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-bottom: 0;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .highlight {
-      color: #00d1b2;
-      font-weight: bold;
-    }
-
-    .experience-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #ffffff;
-    }
-
-    .date {
-      color: #aaa;
-      margin-bottom: 12px;
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,255,200,0.35);
+      box-shadow: 0 0 25px rgba(0,255,200,0.10);
     }
 
     .full {
       grid-column: 1 / -1;
     }
 
+    h2 {
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid rgba(0,255,200,0.25);
+      padding-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    .highlight {
+      color: #00ffd0;
+      font-weight: bold;
+    }
+
+    .experience-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
+
+    .date {
+      color: #aeb4bd;
+      margin-bottom: 14px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .skill {
+      padding: 8px 12px;
+      background: rgba(0,255,200,0.08);
+      border: 1px solid rgba(0,255,200,0.25);
+      color: #dff;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
     .contact {
       display: grid;
-      gap: 8px;
-      color: #e0e0e0;
+      gap: 9px;
+      color: #e2e2e2;
     }
 
     .footer {
       text-align: center;
-      color: #888;
-      margin-top: 30px;
+      margin-top: 32px;
+      color: #9da3aa;
       font-size: 14px;
     }
 
-    @media (max-width: 750px) {
+    @media (max-width: 760px) {
+      .hero {
+        padding: 28px;
+      }
+
       h1 {
-        font-size: 32px;
+        font-size: 34px;
+      }
+
+      .job {
+        font-size: 19px;
       }
 
       .grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 25px;
       }
     }
   </style>
@@ -159,13 +232,15 @@
   <main class="page">
 
     <section class="hero">
+      <div class="badge">QUALITÉ • PRODUCTION • OUTILLAGE • MAINTENANCE</div>
+
       <h1>Romain Tonolli</h1>
       <div class="job">Technicien industriel polyvalent</div>
 
       <p class="tagline">
-        Technicien industriel formé sur le terrain, spécialisé en qualité, production, outillage et maintenance.
-        Issu d’une génération qui valorise le travail bien fait, j’allie rigueur, précision, autonomie et capacité
-        d’adaptation aux outils modernes.
+        Technicien industriel formé sur le terrain, spécialisé en qualité, production,
+        outillage et maintenance. J’allie la rigueur du travail bien fait, la précision
+        technique et une vraie capacité d’adaptation aux outils modernes.
       </p>
 
       <div class="buttons">
@@ -179,8 +254,9 @@
       <div class="card">
         <h2>Profil</h2>
         <p>
-          Professionnel sérieux, curieux et adaptable, avec une expérience solide en environnement industriel exigeant.
-          Habitué au travail précis, aux procédures qualité et à la résolution de problèmes techniques.
+          Professionnel sérieux, autonome et curieux, avec une expérience solide
+          en environnement industriel exigeant. Habitué aux procédures qualité,
+          à la précision et à la résolution de problèmes techniques.
         </p>
       </div>
 
@@ -195,17 +271,17 @@
       </div>
 
       <div class="card full">
-        <h2>Compétences industrielles</h2>
-        <ul>
-          <li>Contrôle qualité industriel : visuel, dimensionnel, traçabilité</li>
-          <li>Production industrielle en atelier technique</li>
-          <li>Maintenance, démontage, nettoyage et remontage de moules d’injection</li>
-          <li>Réparation et ajustement d’empreintes de moules</li>
-          <li>Soudage laser pour ajout de matière et correction de précision</li>
-          <li>Essais et validation conformité sur presses d’injection</li>
-          <li>Procédé de fonderie à la cire perdue</li>
-          <li>Travail sur pièces destinées au secteur médical</li>
-        </ul>
+        <h2>Compétences clés</h2>
+        <div class="skills">
+          <span class="skill">Contrôle qualité</span>
+          <span class="skill">Production industrielle</span>
+          <span class="skill">Outillage</span>
+          <span class="skill">Maintenance de moules</span>
+          <span class="skill">Soudage laser</span>
+          <span class="skill">Cire perdue</span>
+          <span class="skill">Presses d’injection</span>
+          <span class="skill">Secteur médical</span>
+        </div>
       </div>
 
       <div class="card full">
@@ -219,8 +295,9 @@
         </div>
 
         <p>
-          Évolution interne après formation sur plusieurs postes de fabrication dans un atelier spécialisé
-          dans les prothèses chirurgicales par procédé de cire perdue.
+          Évolution interne après formation sur plusieurs postes de fabrication
+          dans un atelier spécialisé dans les prothèses chirurgicales par procédé
+          de cire perdue.
         </p>
 
         <ul>
