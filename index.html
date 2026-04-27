@@ -1,122 +1,268 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Romain Tonolli - Technicien Industriel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romain Tonolli - Technicien Industriel</title>
 
-<style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#111;
-    color:#fff;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:40px;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1115;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
 
-h1{
-    font-size:40px;
-    margin-bottom:5px;
-}
+    .page {
+      max-width: 1050px;
+      margin: auto;
+      padding: 30px 18px;
+    }
 
-h2{
-    border-bottom:1px solid #444;
-    padding-bottom:5px;
-    margin-top:30px;
-}
+    .hero {
+      background: linear-gradient(135deg, #1b1f2a, #111318);
+      border: 1px solid #2a2f3a;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
 
-.subtitle{
-    color:#aaa;
-    margin-bottom:20px;
-}
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      letter-spacing: 1px;
+    }
 
-.highlight{
-    color:#00ffcc;
-}
+    .job {
+      color: #00d1b2;
+      font-size: 22px;
+      margin-top: 8px;
+      font-weight: bold;
+    }
 
-.section{
-    margin-top:20px;
-}
+    .tagline {
+      margin-top: 18px;
+      max-width: 850px;
+      color: #d6d6d6;
+      font-size: 17px;
+    }
 
-ul{
-    line-height:1.6;
-}
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-.contact{
-    margin-top:20px;
-    line-height:1.8;
-}
+    .btn {
+      text-decoration: none;
+      color: #0f1115;
+      background: #00d1b2;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
 
-.footer{
-    margin-top:40px;
-    color:#777;
-    font-size:14px;
-}
-</style>
+    .btn.secondary {
+      background: transparent;
+      color: #f5f5f5;
+      border: 1px solid #3d4350;
+    }
 
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: #171a21;
+      border: 1px solid #2a2f3a;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #ffffff;
+      border-bottom: 1px solid #333946;
+      padding-bottom: 8px;
+      font-size: 22px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      color: #00d1b2;
+      font-weight: bold;
+    }
+
+    .experience-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .date {
+      color: #aaa;
+      margin-bottom: 12px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .contact {
+      display: grid;
+      gap: 8px;
+      color: #e0e0e0;
+    }
+
+    .footer {
+      text-align: center;
+      color: #888;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <main class="page">
 
-<h1>Romain Tonolli</h1>
-<p class="subtitle">Technicien industriel polyvalent</p>
+    <section class="hero">
+      <h1>Romain Tonolli</h1>
+      <div class="job">Technicien industriel polyvalent</div>
 
-<p>
-Technicien industriel formé sur le terrain, passionné par la technique et les systèmes.
-Issu d’une génération qui valorise le travail bien fait, j’allie rigueur, précision et capacité d’adaptation aux outils modernes.
-</p>
+      <p class="tagline">
+        Technicien industriel formé sur le terrain, spécialisé en qualité, production, outillage et maintenance.
+        Issu d’une génération qui valorise le travail bien fait, j’allie rigueur, précision, autonomie et capacité
+        d’adaptation aux outils modernes.
+      </p>
 
-<div class="contact">
-📍 Valenciennes (mobile)<br>
-📧 romain.tonolli@aol.fr<br>
-📞 07 78 26 82 08
-</div>
+      <div class="buttons">
+        <a class="btn" href="mailto:romain.tonolli@aol.fr">Me contacter</a>
+        <a class="btn secondary" href="tel:+33778268208">Appeler</a>
+      </div>
+    </section>
 
-<h2>Compétences</h2>
-<ul>
-<li>Contrôle qualité industriel</li>
-<li>Maintenance de moules d’injection</li>
-<li>Outillage / démontage / remontage</li>
-<li>Soudage laser (ajustement précision)</li>
-<li>Procédé cire perdue (fonderie précision)</li>
-<li>Production industrielle</li>
-</ul>
+    <section class="grid">
 
-<h2>Expérience principale</h2>
-<p>
-<span class="highlight">ATS Groupe Marles – Alès (2020 – 2026)</span><br><br>
+      <div class="card">
+        <h2>Profil</h2>
+        <p>
+          Professionnel sérieux, curieux et adaptable, avec une expérience solide en environnement industriel exigeant.
+          Habitué au travail précis, aux procédures qualité et à la résolution de problèmes techniques.
+        </p>
+      </div>
 
-Évolution interne d’opérateur à technicien outilleur dans un atelier de fabrication de prothèses chirurgicales.
+      <div class="card">
+        <h2>Contact</h2>
+        <div class="contact">
+          <div>📍 Valenciennes / mobilité professionnelle</div>
+          <div>📧 romain.tonolli@aol.fr</div>
+          <div>📞 07 78 26 82 08</div>
+          <div>🚗 Permis B + véhicule</div>
+        </div>
+      </div>
 
-<ul>
-<li>Fabrication de modèles en cire (cire perdue)</li>
-<li>Application de revêtement DIP</li>
-<li>Préparation des moules pour coulée chrome cobalt</li>
-<li>Maintenance complète des moules d’injection</li>
-<li>Réparation et ajustement des empreintes</li>
-<li>Soudage laser</li>
-<li>Essais et validation sur presses d’injection</li>
-</ul>
-</p>
+      <div class="card full">
+        <h2>Compétences industrielles</h2>
+        <ul>
+          <li>Contrôle qualité industriel : visuel, dimensionnel, traçabilité</li>
+          <li>Production industrielle en atelier technique</li>
+          <li>Maintenance, démontage, nettoyage et remontage de moules d’injection</li>
+          <li>Réparation et ajustement d’empreintes de moules</li>
+          <li>Soudage laser pour ajout de matière et correction de précision</li>
+          <li>Essais et validation conformité sur presses d’injection</li>
+          <li>Procédé de fonderie à la cire perdue</li>
+          <li>Travail sur pièces destinées au secteur médical</li>
+        </ul>
+      </div>
 
-<h2>Formation</h2>
-<ul>
-<li>Bac Pro Productique Mécanique</li>
-<li>BEP / CAP Microtechnique</li>
-<li>Formation relation client ENGIE</li>
-</ul>
+      <div class="card full">
+        <h2>Expérience principale</h2>
 
-<div class="footer">
-Disponible immédiatement — Sérieux, autonome, adaptable
-</div>
+        <div class="experience-title">
+          Technicien outilleur / Opérateur atelier cire
+        </div>
+        <div class="date">
+          ATS Groupe Marles – Alès | 2023 – 2026
+        </div>
 
-</div>
+        <p>
+          Évolution interne après formation sur plusieurs postes de fabrication dans un atelier spécialisé
+          dans les prothèses chirurgicales par procédé de cire perdue.
+        </p>
+
+        <ul>
+          <li>Fabrication et préparation de pièces en cire pour prothèses chirurgicales</li>
+          <li>Supervision de plusieurs postes de fabrication en atelier cire</li>
+          <li>Maintenance complète de moules d’injection avec appareillage complet</li>
+          <li>Démontage, nettoyage, réparation et remontage des moules</li>
+          <li>Réparation des mottes et empreintes moulées de différentes prothèses</li>
+          <li>Soudage laser pour ajout de matière et réajustement de précision</li>
+          <li>Essais de conformité sur presses d’injection</li>
+          <li>Respect des exigences qualité liées au secteur médical</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Formation</h2>
+        <ul>
+          <li>Bac Pro Productique Mécanique</li>
+          <li>BEP / CAP Microtechnique et Micro-mécanique</li>
+          <li>Formation relation client ENGIE</li>
+          <li>Formation terrain en outillage et atelier cire</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Atouts</h2>
+        <ul>
+          <li>Rigueur et sens du détail</li>
+          <li>Autonomie sur poste technique</li>
+          <li>Bonne capacité d’apprentissage</li>
+          <li>Culture du travail bien fait</li>
+          <li>À l’aise avec l’informatique et les systèmes</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <div class="footer">
+      Disponible pour un poste en qualité, production, outillage ou maintenance industrielle.
+    </div>
+
+  </main>
 
 </body>
 </html>
