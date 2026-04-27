@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Romain Tonolli | Technicien Industriel</title>
+  <title>NScard.R.A.Tonolli</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: Arial, sans-serif;
@@ -32,32 +28,14 @@
       z-index: -1;
     }
 
-    .page {
-      max-width: 1100px;
-      margin: auto;
-      padding: 35px 18px;
-    }
+    .page { max-width: 1100px; margin: auto; padding: 35px 18px; }
 
     .hero {
-      position: relative;
       padding: 45px;
       border-radius: 24px;
       background: rgba(15, 20, 30, 0.92);
       border: 1px solid rgba(0,255,200,0.25);
       box-shadow: 0 0 35px rgba(0,255,200,0.12);
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 220px;
-      height: 220px;
-      background: rgba(0,255,200,0.15);
-      filter: blur(45px);
-      border-radius: 50%;
     }
 
     .badge {
@@ -68,13 +46,9 @@
       border-radius: 999px;
       font-size: 13px;
       margin-bottom: 18px;
-      letter-spacing: 1px;
     }
 
-    h1 {
-      font-size: 46px;
-      margin-bottom: 8px;
-    }
+    h1 { font-size: 46px; margin-bottom: 8px; }
 
     .job {
       font-size: 23px;
@@ -83,349 +57,154 @@
       margin-bottom: 20px;
     }
 
-    .tagline {
-      max-width: 850px;
-      color: #d7d7d7;
-      font-size: 17px;
-    }
+    .tagline { max-width: 850px; color: #d7d7d7; }
 
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
+    .buttons { display: flex; gap: 12px; margin-top: 25px; }
 
     .btn {
       text-decoration: none;
-      padding: 13px 19px;
-      border-radius: 12px;
+      padding: 12px 18px;
+      border-radius: 10px;
       font-weight: bold;
-      color: #06110f;
       background: #00ffd0;
-      box-shadow: 0 0 18px rgba(0,255,200,0.25);
-      transition: 0.25s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 25px rgba(0,255,200,0.45);
+      color: #06110f;
     }
 
     .btn.secondary {
       background: transparent;
-      color: #f4f4f4;
-      border: 1px solid rgba(255,255,255,0.25);
-      box-shadow: none;
+      color: #fff;
+      border: 1px solid #555;
     }
 
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      margin-top: 26px;
+      gap: 20px;
+      margin-top: 25px;
     }
 
     .card {
-      background: rgba(18, 24, 35, 0.92);
+      background: rgba(18,24,35,0.92);
+      padding: 22px;
+      border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 26px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-      transition: 0.25s;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(0,255,200,0.35);
-      box-shadow: 0 0 25px rgba(0,255,200,0.10);
-    }
-
-    .full {
-      grid-column: 1 / -1;
-    }
+    .full { grid-column: 1 / -1; }
 
     h2 {
-      color: #ffffff;
-      font-size: 22px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       border-bottom: 1px solid rgba(0,255,200,0.25);
-      padding-bottom: 8px;
+      padding-bottom: 5px;
     }
 
-    p {
-      margin-bottom: 14px;
-    }
+    ul { padding-left: 20px; }
 
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 9px;
-    }
-
-    .experience-title {
-      font-size: 20px;
-      font-weight: bold;
-      color: #ffffff;
-      margin-bottom: 5px;
-    }
-
-    .date {
-      color: #aeb4bd;
-      margin-bottom: 14px;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .skill {
-      padding: 8px 12px;
-      background: rgba(0,255,200,0.08);
-      border: 1px solid rgba(0,255,200,0.25);
-      color: #dff;
-      border-radius: 999px;
-      font-size: 14px;
-    }
-
-    .contact {
-      display: grid;
-      gap: 9px;
-      color: #e2e2e2;
-    }
+    .contact { line-height: 1.7; }
 
     .footer {
       text-align: center;
-      margin-top: 32px;
-      color: #9da3aa;
-      font-size: 14px;
+      margin-top: 30px;
+      color: #aaa;
     }
 
     @media (max-width: 760px) {
-      .hero {
-        padding: 28px;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-
-      .job {
-        font-size: 19px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 34px; }
     }
   </style>
 </head>
 
 <body>
 
-  <main class="page">
+<main class="page">
 
-    <section class="hero">
-      <div class="badge">QUALITÉ • PRODUCTION • OUTILLAGE • MAINTENANCE • NUMÉRIQUE</div>
+<section class="hero">
 
-      <h1>Romain Tonolli</h1>
-      <div class="job">Technicien industriel polyvalent</div>
+<div class="badge">NScard.R.A.Tonolli</div>
 
-      <p class="tagline">
-        Technicien industriel formé sur le terrain, spécialisé en qualité, production,
-        outillage et maintenance. J’allie la rigueur du travail bien fait, la précision
-        technique, l’expérience humaine et une vraie capacité d’adaptation aux outils modernes.
-      </p>
+<h1>Romain Tonolli</h1>
+<div class="job">Technicien industriel polyvalent</div>
 
-      <div class="buttons">
-        <a class="btn" href="mailto:romain.tonolli@aol.fr">Me contacter</a>
-        <a class="btn secondary" href="tel:+33778268208">Appeler</a>
-      </div>
-    </section>
+<p class="tagline">
+Technicien industriel formé sur le terrain, spécialisé en qualité, production, outillage et maintenance.
+J’allie la rigueur du travail bien fait, la précision technique et une forte capacité d’adaptation aux outils modernes.
+</p>
 
-    <section class="grid">
+<div class="buttons">
+<a class="btn" href="mailto:romain.tonolli@aol.fr">Me contacter</a>
+<a class="btn secondary" href="tel:+33601840379">Appeler</a>
+</div>
 
-      <div class="card">
-        <h2>Profil</h2>
-        <p>
-          Professionnel sérieux, autonome et curieux, avec une expérience solide
-          en environnement industriel exigeant. Habitué aux procédures qualité,
-          à la précision et à la résolution de problèmes techniques.
-        </p>
-      </div>
+</section>
 
-      <div class="card">
-        <h2>Contact</h2>
-        <div class="contact">
-          <div>📍 Valenciennes / mobilité professionnelle</div>
-          <div>📧 romain.tonolli@aol.fr</div>
-          <div>📞 07 78 26 82 08</div>
-          <div>🚗 Permis B + véhicule</div>
-        </div>
-      </div>
+<section class="grid">
 
-      <div class="card full">
-        <h2>Vision & état d’esprit</h2>
-        <p>
-          Je suis conscient d’être issu d’une génération qui a connu une évolution forte
-          du monde du travail et des technologies. J’ai appris à construire avec des bases solides,
-          où l’effort, la rigueur et le travail bien fait étaient essentiels.
-        </p>
+<div class="card">
+<h2>Profil</h2>
+<p>Professionnel sérieux, autonome et rigoureux, avec une forte expérience en environnement industriel exigeant.</p>
+</div>
 
-        <p>
-          Aujourd’hui, je fais le choix de ne pas rester figé dans cette expérience,
-          mais de la faire évoluer. Je développe en permanence ma capacité d’adaptation
-          aux nouveaux systèmes technologiques, en combinant mon vécu, mon intelligence
-          d’analyse et ma volonté de progresser.
-        </p>
+<div class="card">
+<h2>Contact</h2>
+<div class="contact">
+📍 Valenciennes<br>
+📧 romain.tonolli@aol.fr<br>
+📞 06 01 84 03 79<br>
+🚗 Permis B + véhicule
+</div>
+</div>
 
-        <p>
-          Je cherche à avancer avec équilibre : garder ce qui fait la force d’un professionnel
-          expérimenté, tout en intégrant les outils modernes pour rester performant,
-          efficace et en constante évolution.
-        </p>
-      </div>
+<div class="card full">
+<h2>Compétences clés</h2>
+<ul>
+<li>Contrôle qualité industriel</li>
+<li>Maintenance de moules</li>
+<li>Soudage laser</li>
+<li>Production industrielle</li>
+<li>Fonderie cire perdue</li>
+<li>Presses d’injection</li>
+<li>Informatique Hardware & IA</li>
+</ul>
+</div>
 
-      <div class="card full">
-        <h2>Compétences clés</h2>
-        <div class="skills">
-          <span class="skill">Contrôle qualité</span>
-          <span class="skill">Production industrielle</span>
-          <span class="skill">Outillage</span>
-          <span class="skill">Maintenance de moules</span>
-          <span class="skill">Soudage laser</span>
-          <span class="skill">Cire perdue</span>
-          <span class="skill">Presses d’injection</span>
-          <span class="skill">Secteur médical</span>
-          <span class="skill">Hardware</span>
-          <span class="skill">Intelligence artificielle</span>
-          <span class="skill">Pédagogie</span>
-          <span class="skill">Analyse comportementale</span>
-        </div>
-      </div>
+<div class="card full">
+<h2>Expérience principale</h2>
+<p><strong>ATS Groupe Marles – Alès (2023–2026)</strong></p>
+<ul>
+<li>Technicien outilleur</li>
+<li>Maintenance et réparation de moules</li>
+<li>Soudage laser</li>
+<li>Essais conformité</li>
+<li>Supervision atelier cire</li>
+</ul>
+</div>
 
-      <div class="card full">
-        <h2>Expérience principale</h2>
+<div class="card">
+<h2>Formation</h2>
+<ul>
+<li>Bac Pro Productique</li>
+<li>BEP / CAP Microtechnique</li>
+</ul>
+</div>
 
-        <div class="experience-title">
-          Technicien outilleur / Opérateur atelier cire
-        </div>
-        <div class="date">
-          ATS Groupe Marles – Alès | 2023 – 2026
-        </div>
+<div class="card">
+<h2>Atouts</h2>
+<ul>
+<li>Rigueur</li>
+<li>Autonomie</li>
+<li>Adaptabilité</li>
+<li>Esprit analytique</li>
+</ul>
+</div>
 
-        <p>
-          Évolution interne après formation sur plusieurs postes de fabrication
-          dans un atelier spécialisé dans les prothèses chirurgicales par procédé
-          de cire perdue.
-        </p>
+</section>
 
-        <ul>
-          <li>Fabrication et préparation de pièces en cire pour prothèses chirurgicales</li>
-          <li>Supervision de plusieurs postes de fabrication en atelier cire</li>
-          <li>Maintenance complète de moules d’injection avec appareillage complet</li>
-          <li>Démontage, nettoyage, réparation et remontage des moules</li>
-          <li>Réparation des mottes et empreintes moulées de différentes prothèses</li>
-          <li>Soudage laser pour ajout de matière et réajustement de précision</li>
-          <li>Essais de conformité sur presses d’injection</li>
-          <li>Respect des exigences qualité liées au secteur médical</li>
-        </ul>
-      </div>
+<div class="footer">
+Disponible immédiatement
+</div>
 
-      <div class="card full">
-        <h2>Compétences numériques & informatique</h2>
-
-        <p>
-          Je possède une forte appétence pour l’informatique, aussi bien en hardware
-          qu’en software. Je suis capable de monter, diagnostiquer et optimiser
-          des systèmes informatiques complets.
-        </p>
-
-        <p>
-          Je m’intéresse également aux technologies d’intelligence artificielle,
-          que j’utilise comme outil d’analyse, d’apprentissage et d’amélioration continue
-          dans mon quotidien professionnel.
-        </p>
-
-        <ul>
-          <li>Montage et maintenance informatique hardware</li>
-          <li>Diagnostic de pannes systèmes</li>
-          <li>Utilisation avancée des outils numériques</li>
-          <li>Compréhension et utilisation des outils d’intelligence artificielle</li>
-          <li>Adaptation rapide aux nouveaux environnements technologiques</li>
-        </ul>
-      </div>
-
-      <div class="card full">
-        <h2>Approche moderne & outils numériques</h2>
-
-        <p>
-          Je m’inscris dans une démarche d’évolution constante, en intégrant les outils
-          numériques modernes dans mon quotidien. L’utilisation des intelligences artificielles
-          me permet d’analyser, structurer et améliorer mes compétences de manière autonome.
-        </p>
-
-        <p>
-          Cette approche me permet de prendre du recul sur mon travail, d’optimiser mes méthodes
-          et de développer une vision plus globale des systèmes dans lesquels j’évolue.
-          Je considère ces outils comme un levier d’amélioration continue, au service de la performance,
-          de la compréhension et de la progression professionnelle.
-        </p>
-      </div>
-
-      <div class="card full">
-        <h2>Approche humaine & pédagogique</h2>
-
-        <p>
-          Formé en éthologie et en comportementalisme canin, j’ai développé une capacité
-          d’observation fine des comportements et des mécanismes d’apprentissage.
-          Cette compétence me permet aujourd’hui d’avoir une approche pédagogique claire,
-          structurée et efficace dans un environnement industriel.
-        </p>
-
-        <p>
-          Je suis capable de comprendre rapidement les situations, d’analyser les réactions humaines
-          et de transmettre un savoir de manière adaptée. Cette sensibilité humaine est un véritable
-          atout pour travailler en équipe, accompagner une personne en formation et évoluer
-          dans des environnements exigeants.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>Formation</h2>
-        <ul>
-          <li>Bac Pro Productique Mécanique</li>
-          <li>BEP / CAP Microtechnique et Micro-mécanique</li>
-          <li>Formation relation client ENGIE</li>
-          <li>Formation terrain en outillage et atelier cire</li>
-          <li>Formation en éthologie / comportementalisme canin</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Atouts</h2>
-        <ul>
-          <li>Rigueur et sens du détail</li>
-          <li>Autonomie sur poste technique</li>
-          <li>Bonne capacité d’apprentissage</li>
-          <li>Culture du travail bien fait</li>
-          <li>À l’aise avec l’informatique et les systèmes</li>
-          <li>Capacité à transmettre et former</li>
-        </ul>
-      </div>
-
-    </section>
-
-    <div class="footer">
-      Disponible pour un poste en qualité, production, outillage, maintenance industrielle ou accompagnement terrain.
-    </div>
-
-  </main>
+</main>
 
 </body>
 </html>
