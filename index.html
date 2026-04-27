@@ -1,232 +1,472 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NScard.R.A.Tonolli</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NScard.R.A.Tonolli</title>
 
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-font-family: Arial, sans-serif;
-background: radial-gradient(circle at top, #1b2735, #090a0f 70%);
-color: #f4f4f4;
-line-height: 1.6;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,80,0,0.22), transparent 25%),
+        radial-gradient(circle at 80% 0%, rgba(0,220,255,0.18), transparent 28%),
+        linear-gradient(135deg, #07090d, #101622 55%, #050608);
+      color: #f4f4f4;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
 
-/* effet grille */
-body::before {
-content: "";
-position: fixed;
-inset: 0;
-background-image:
-linear-gradient(rgba(0,255,200,0.04) 1px, transparent 1px),
-linear-gradient(90deg, rgba(0,255,200,0.04) 1px, transparent 1px);
-background-size: 40px 40px;
-z-index: -1;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,255,220,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,220,0.045) 1px, transparent 1px);
+      background-size: 42px 42px;
+      pointer-events: none;
+      z-index: -1;
+    }
 
-.page {
-max-width: 1100px;
-margin: auto;
-padding: 30px;
-}
+    .page {
+      max-width: 1180px;
+      margin: auto;
+      padding: 32px 18px;
+    }
 
-.hero {
-display: flex;
-gap: 30px;
-align-items: center;
-background: rgba(15,20,30,0.9);
-padding: 30px;
-border-radius: 20px;
-border: 1px solid rgba(0,255,200,0.3);
-box-shadow: 0 0 25px rgba(0,255,200,0.15);
-}
+    .hero {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 32px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 26px;
+      background: rgba(10, 14, 22, 0.92);
+      border: 1px solid rgba(0,255,220,0.28);
+      box-shadow:
+        0 0 35px rgba(0,255,220,0.14),
+        inset 0 0 25px rgba(255,90,0,0.06);
+      position: relative;
+      overflow: hidden;
+    }
 
-.hero img {
-width: 180px;
-height: 180px;
-object-fit: cover;
-border-radius: 50%;
-border: 3px solid #00ffd0;
-box-shadow: 0 0 20px rgba(0,255,200,0.4);
-}
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -90px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255,90,0,0.32), transparent 65%);
+      filter: blur(8px);
+    }
 
-h1 {
-font-size: 36px;
-}
+    .photo-wrap {
+      position: relative;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      padding: 5px;
+      background: conic-gradient(from 90deg, #00ffe0, #ff6a00, #00ffe0);
+      box-shadow: 0 0 28px rgba(0,255,220,0.35);
+      z-index: 1;
+    }
 
-.job {
-color: #00ffd0;
-font-size: 20px;
-margin-bottom: 10px;
-}
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #080b10;
+      display: block;
+    }
 
-.tagline {
-color: #ccc;
-}
+    .badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,255,220,0.45);
+      color: #00ffe0;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      background: rgba(0,255,220,0.06);
+    }
 
-.buttons {
-margin-top: 15px;
-}
+    h1 {
+      font-size: 46px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
 
-.btn {
-display: inline-block;
-padding: 10px 15px;
-margin-right: 10px;
-border-radius: 8px;
-background: #00ffd0;
-color: #000;
-text-decoration: none;
-font-weight: bold;
-}
+    .job {
+      color: #ff7a1a;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
 
-.btn.secondary {
-background: transparent;
-border: 1px solid #00ffd0;
-color: #fff;
-}
+    .tagline {
+      max-width: 820px;
+      color: #d8dce3;
+      font-size: 17px;
+    }
 
-.grid {
-margin-top: 25px;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 20px;
-}
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
 
-.card {
-background: rgba(20,25,35,0.9);
-padding: 20px;
-border-radius: 15px;
-border: 1px solid rgba(255,255,255,0.1);
-transition: 0.3s;
-}
+    .btn {
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #06110f;
+      background: #00ffe0;
+      box-shadow: 0 0 18px rgba(0,255,220,0.28);
+      transition: 0.25s;
+    }
 
-.card:hover {
-transform: translateY(-5px);
-box-shadow: 0 0 15px rgba(0,255,200,0.2);
-}
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 28px rgba(0,255,220,0.45);
+    }
 
-.full {
-grid-column: 1 / -1;
-}
+    .btn.secondary {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,122,26,0.65);
+      box-shadow: 0 0 14px rgba(255,122,26,0.12);
+    }
 
-h2 {
-margin-bottom: 10px;
-border-bottom: 1px solid rgba(0,255,200,0.3);
-padding-bottom: 5px;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 24px;
+    }
 
-ul {
-padding-left: 20px;
-}
+    .card {
+      background: rgba(15, 20, 31, 0.92);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+      transition: 0.25s;
+    }
 
-.footer {
-text-align: center;
-margin-top: 30px;
-color: #aaa;
-}
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,255,220,0.35);
+      box-shadow: 0 0 26px rgba(0,255,220,0.11);
+    }
 
-@media (max-width: 800px) {
-.hero {
-flex-direction: column;
-text-align: center;
-}
-.grid {
-grid-template-columns: 1fr;
-}
-}
-</style>
+    .full { grid-column: 1 / -1; }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0,255,220,0.26);
+      color: #ffffff;
+    }
+
+    p { margin-bottom: 13px; color: #dce1e8; }
+
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; color: #dce1e8; }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #eaffff;
+      border: 1px solid rgba(0,255,220,0.28);
+      background: rgba(0,255,220,0.07);
+      font-size: 14px;
+    }
+
+    .orange {
+      color: #ff7a1a;
+      font-weight: bold;
+    }
+
+    .cyan {
+      color: #00ffe0;
+      font-weight: bold;
+    }
+
+    .experience-title {
+      font-size: 20px;
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .date {
+      color: #aeb7c4;
+      margin-bottom: 14px;
+    }
+
+    .contact {
+      display: grid;
+      gap: 8px;
+      color: #e5e5e5;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 32px;
+      color: #aeb7c4;
+      font-size: 14px;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .photo-wrap {
+        margin: auto;
+      }
+
+      h1 { font-size: 34px; }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="page">
+  <main class="page">
 
-<div class="hero">
+    <section class="hero">
+      <div class="photo-wrap">
+        <img src="photo.jpg" alt="Photo de Romain Tonolli">
+      </div>
 
-<img src="photo.jpg" alt="Romain Tonolli">
+      <div>
+        <div class="badge">NScard.R.A.Tonolli</div>
+        <h1>Romain Tonolli</h1>
+        <div class="job">Technicien industriel polyvalent</div>
 
-<div>
-<div class="badge">NScard.R.A.Tonolli</div>
-<h1>Romain Tonolli</h1>
-<div class="job">Technicien industriel polyvalent</div>
+        <p class="tagline">
+          Technicien industriel formé sur le terrain, spécialisé en qualité, production,
+          outillage et maintenance. J’allie la rigueur du travail bien fait, la précision
+          technique, l’expérience humaine et une vraie capacité d’adaptation aux outils modernes.
+        </p>
 
-<p class="tagline">
-Technicien industriel formé sur le terrain, entre rigueur mécanique et adaptation numérique.
-Je combine expérience, précision et intelligence des systèmes modernes.
-</p>
+        <div class="buttons">
+          <a class="btn" href="mailto:romain.tonolli@aol.fr">Me contacter</a>
+          <a class="btn secondary" href="tel:+33601840379">Appeler</a>
+        </div>
+      </div>
+    </section>
 
-<div class="buttons">
-<a class="btn" href="mailto:romain.tonolli@aol.fr">Me contacter</a>
-<a class="btn secondary" href="tel:+33601840379">Appeler</a>
-</div>
+    <section class="grid">
 
-</div>
-</div>
+      <div class="card">
+        <h2>Contact</h2>
+        <div class="contact">
+          <div>📍 Valenciennes / mobilité professionnelle</div>
+          <div>📧 romain.tonolli@aol.fr</div>
+          <div>📞 06 01 84 03 79</div>
+          <div>🚗 Permis B + véhicule</div>
+        </div>
+      </div>
 
-<div class="grid">
+      <div class="card">
+        <h2>Profil</h2>
+        <p>
+          Je suis un professionnel sérieux, autonome et curieux, avec une expérience solide
+          en environnement industriel exigeant. Je suis habitué aux procédures qualité,
+          à la précision, à la résolution de problèmes techniques et au travail bien fait.
+        </p>
+      </div>
 
-<div class="card full">
-<h2>Vision & état d’esprit</h2>
-<p>
-Je suis issu d’une génération qui a connu le travail concret, l’effort réel et la rigueur du terrain.
-Aujourd’hui, j’ai choisi d’évoluer avec mon époque en intégrant les outils modernes et numériques.
-</p>
-<p>
-Je combine mon expérience de vie, mon sens du détail et ma capacité d’analyse avec une volonté constante de progression.
-</p>
-</div>
+      <div class="card full">
+        <h2>Vision & état d’esprit</h2>
+        <p>
+          Je suis conscient d’être issu d’une génération qui a connu une évolution forte
+          du monde du travail et des technologies. J’ai appris à construire avec des bases solides,
+          où l’effort, la rigueur et le travail bien fait étaient essentiels.
+        </p>
+        <p>
+          Aujourd’hui, je fais le choix de ne pas rester figé dans cette expérience,
+          mais de la faire évoluer. Je développe en permanence ma capacité d’adaptation
+          aux nouveaux systèmes technologiques, en combinant mon vécu, mon intelligence
+          d’analyse et ma volonté de progresser.
+        </p>
+        <p>
+          Je cherche à avancer avec équilibre : garder ce qui fait la force d’un professionnel
+          expérimenté, tout en intégrant les outils modernes pour rester performant,
+          efficace et en constante évolution.
+        </p>
+      </div>
 
-<div class="card full">
-<h2>Expérience principale</h2>
-<p><strong>ATS Groupe Marles – Alès (2023–2026)</strong></p>
-<ul>
-<li>Technicien outilleur</li>
-<li>Maintenance complète de moules d’injection</li>
-<li>Soudage laser</li>
-<li>Essais et validation conformité</li>
-<li>Supervision atelier cire</li>
-</ul>
-</div>
+      <div class="card full">
+        <h2>Compétences clés</h2>
+        <div class="skills">
+          <span class="skill">Contrôle qualité</span>
+          <span class="skill">Production industrielle</span>
+          <span class="skill">Outillage</span>
+          <span class="skill">Maintenance de moules</span>
+          <span class="skill">Soudage laser</span>
+          <span class="skill">Cire perdue</span>
+          <span class="skill">Presses d’injection</span>
+          <span class="skill">Secteur médical</span>
+          <span class="skill">Hardware</span>
+          <span class="skill">Intelligence artificielle</span>
+          <span class="skill">Pédagogie</span>
+          <span class="skill">Analyse comportementale</span>
+        </div>
+      </div>
 
-<div class="card">
-<h2>Compétences industrielles</h2>
-<ul>
-<li>Contrôle qualité</li>
-<li>Production industrielle</li>
-<li>Maintenance de moules</li>
-<li>Fonderie cire perdue</li>
-<li>Presses injection</li>
-</ul>
-</div>
+      <div class="card full">
+        <h2>Expérience principale</h2>
 
-<div class="card">
-<h2>Informatique & IA</h2>
-<ul>
-<li>Montage PC Hardware</li>
-<li>Diagnostic systèmes</li>
-<li>Utilisation IA</li>
-<li>Adaptation technologique</li>
-</ul>
-</div>
+        <div class="experience-title">
+          Technicien outilleur / Opérateur atelier cire
+        </div>
+        <div class="date">
+          ATS Groupe Marles – Alès | 2023 – 2026
+        </div>
 
-<div class="card full">
-<h2>Approche humaine & pédagogique</h2>
-<p>
-Formé en comportementalisme, j’ai développé une capacité à analyser et transmettre efficacement.
-Cette compétence me permet d’être à l’aise en équipe et dans la formation.
-</p>
-</div>
+        <p>
+          J’ai évolué en interne après avoir été formé sur plusieurs postes de fabrication
+          dans un atelier spécialisé dans les prothèses chirurgicales par procédé de cire perdue.
+          Cette progression m’a permis de passer d’un poste d’opérateur polyvalent à des compétences
+          de technicien outilleur terrain.
+        </p>
 
-</div>
+        <ul>
+          <li>Fabrication et préparation de pièces en cire pour prothèses chirurgicales.</li>
+          <li>Travail sur le procédé de cire perdue destiné à la coulée de chrome cobalt.</li>
+          <li>Supervision de plusieurs postes de fabrication en atelier cire.</li>
+          <li>Maintenance complète de moules d’injection avec appareillage complet.</li>
+          <li>Démontage, nettoyage, réparation et remontage des moules.</li>
+          <li>Réparation des mottes et empreintes moulées de différentes prothèses.</li>
+          <li>Soudage laser pour ajout de matière et réajustement de précision.</li>
+          <li>Essais de conformité sur presses d’injection.</li>
+          <li>Respect des exigences qualité liées au secteur médical.</li>
+        </ul>
+      </div>
 
-<div class="footer">
-📞 06 01 84 03 79 — Disponible immédiatement
-</div>
+      <div class="card full">
+        <h2>Compétences industrielles</h2>
+        <ul>
+          <li>Contrôle qualité industriel : visuel, dimensionnel, traçabilité.</li>
+          <li>Production industrielle en atelier technique.</li>
+          <li>Maintenance, démontage, nettoyage et remontage de moules d’injection.</li>
+          <li>Réparation et ajustement d’empreintes de moules.</li>
+          <li>Soudage laser pour ajout de matière et correction de précision.</li>
+          <li>Essais et validation conformité sur presses d’injection.</li>
+          <li>Procédé de fonderie à la cire perdue.</li>
+          <li>Travail sur pièces destinées au secteur médical.</li>
+        </ul>
+      </div>
 
-</div>
+      <div class="card full">
+        <h2>Compétences numériques & informatique</h2>
+        <p>
+          Je possède une forte appétence pour l’informatique, aussi bien en hardware
+          qu’en software. Je suis capable de monter, diagnostiquer et optimiser
+          des systèmes informatiques complets.
+        </p>
+        <p>
+          Je m’intéresse également aux technologies d’intelligence artificielle,
+          que j’utilise comme outil d’analyse, d’apprentissage et d’amélioration continue
+          dans mon quotidien professionnel.
+        </p>
+        <ul>
+          <li>Montage et maintenance informatique hardware.</li>
+          <li>Diagnostic de pannes systèmes.</li>
+          <li>Utilisation avancée des outils numériques.</li>
+          <li>Compréhension et utilisation des outils d’intelligence artificielle.</li>
+          <li>Adaptation rapide aux nouveaux environnements technologiques.</li>
+        </ul>
+      </div>
+
+      <div class="card full">
+        <h2>Approche moderne & outils numériques</h2>
+        <p>
+          Je m’inscris dans une démarche d’évolution constante, en intégrant les outils
+          numériques modernes dans mon quotidien. L’utilisation des intelligences artificielles
+          me permet d’analyser, structurer et améliorer mes compétences de manière autonome.
+        </p>
+        <p>
+          Cette approche me permet de prendre du recul sur mon travail, d’optimiser mes méthodes
+          et de développer une vision plus globale des systèmes dans lesquels j’évolue.
+          Je considère ces outils comme un levier d’amélioration continue, au service de la performance,
+          de la compréhension et de la progression professionnelle.
+        </p>
+      </div>
+
+      <div class="card full">
+        <h2>Approche humaine & pédagogique</h2>
+        <p>
+          Formé en éthologie et en comportementalisme canin, j’ai développé une capacité
+          d’observation fine des comportements et des mécanismes d’apprentissage.
+          Cette compétence me permet aujourd’hui d’avoir une approche pédagogique claire,
+          structurée et efficace dans un environnement industriel.
+        </p>
+        <p>
+          Je suis capable de comprendre rapidement les situations, d’analyser les réactions humaines
+          et de transmettre un savoir de manière adaptée. Cette sensibilité humaine est un véritable
+          atout pour travailler en équipe, accompagner une personne en formation et évoluer
+          dans des environnements exigeants.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Formation</h2>
+        <ul>
+          <li>Bac Pro Productique Mécanique.</li>
+          <li>BEP / CAP Microtechnique et Micro-mécanique.</li>
+          <li>Formation relation client ENGIE.</li>
+          <li>Formation terrain en outillage et atelier cire.</li>
+          <li>Formation en éthologie / comportementalisme canin.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Atouts</h2>
+        <ul>
+          <li>Rigueur et sens du détail.</li>
+          <li>Autonomie sur poste technique.</li>
+          <li>Bonne capacité d’apprentissage.</li>
+          <li>Culture du travail bien fait.</li>
+          <li>À l’aise avec l’informatique et les systèmes.</li>
+          <li>Capacité à transmettre et former.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <div class="footer">
+      Disponible pour un poste en qualité, production, outillage, maintenance industrielle ou accompagnement terrain.
+    </div>
+
+  </main>
 
 </body>
 </html>
