@@ -179,6 +179,11 @@
       background: #00ffe0;
       box-shadow: 0 0 18px rgba(0, 255, 220, 0.28);
       transition: 0.25s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
     }
 
     .btn:hover {
@@ -186,11 +191,31 @@
       box-shadow: 0 0 28px rgba(0, 255, 220, 0.45);
     }
 
+    .btn:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 4px;
+    }
+
     .btn.secondary {
       background: transparent;
       color: #ffffff;
       border: 1px solid rgba(255, 122, 26, 0.70);
       box-shadow: 0 0 14px rgba(255, 122, 26, 0.14);
+    }
+
+    .btn.document {
+      background: linear-gradient(135deg, rgba(255, 122, 26, 0.94), rgba(255, 166, 64, 0.94));
+      color: #110804;
+      border: 1px solid rgba(255, 220, 170, 0.70);
+      box-shadow:
+        0 0 18px rgba(255, 122, 26, 0.28),
+        inset 0 0 18px rgba(255, 255, 255, 0.10);
+    }
+
+    .btn.document:hover {
+      box-shadow:
+        0 0 30px rgba(255, 122, 26, 0.48),
+        inset 0 0 18px rgba(255, 255, 255, 0.12);
     }
 
     .grid {
@@ -305,6 +330,12 @@
       color: #e5e5e5;
     }
 
+    .document-note {
+      margin-top: 14px;
+      font-size: 14px;
+      color: #aeb7c4;
+    }
+
     .footer {
       text-align: center;
       margin-top: 32px;
@@ -339,6 +370,10 @@
       .buttons {
         justify-content: center;
       }
+
+      .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -369,11 +404,48 @@
         </p>
 
         <div class="buttons">
-  <a class="btn" href="mailto:romain.tonolli@aol.fr">Me contacter</a>
-  <a class="btn secondary" href="tel:+33601840379">Appeler</a>
-  <a class="btn" href="CV_Romain_Tonolli_FINAL.pdf" download>Télécharger mon CV PDF</a>
-  <a class="btn secondary" href="attestation_activite_interim_Romain-TONOLLI_29042026.pdf" download>Télécharger mon attestation</a>
-</div>
+          <a
+            class="btn"
+            href="mailto:romain.tonolli@aol.fr"
+            aria-label="Contacter Romain Tonolli par email">
+            Me contacter
+          </a>
+
+          <a
+            class="btn secondary"
+            href="tel:+33601840379"
+            aria-label="Appeler Romain Tonolli">
+            Appeler
+          </a>
+
+          <a
+            class="btn"
+            href="CV_Romain_Tonolli_FINAL.pdf"
+            download
+            aria-label="Télécharger le CV PDF de Romain Tonolli">
+            Télécharger mon CV PDF
+          </a>
+
+          <a
+            class="btn secondary"
+            href="attestation_activite_interim_Romain-TONOLLI_29042026.pdf"
+            download
+            aria-label="Télécharger l’attestation d’activité intérim de Romain Tonolli">
+            📄 Télécharger mon attestation
+          </a>
+
+          <a
+            class="btn document"
+            href="attestation_activite_interim_Romain-TONOLLI_29042026.pdf"
+            download="attestation_activite_interim_Romain-TONOLLI_29042026.pdf"
+            aria-label="Télécharger le document justificatif d’activité intérim de Romain Tonolli">
+            📎 Document recruteur : attestation d’activité intérim
+          </a>
+        </div>
+
+        <p class="document-note">
+          Document justificatif disponible au téléchargement direct pour vérification du parcours professionnel.
+        </p>
       </div>
 
     </section>
@@ -584,14 +656,3 @@
           <li>Esprit analytique et curiosité technique.</li>
         </ul>
       </div>
-
-    </section>
-
-    <div class="footer">
-      Disponible pour un poste en qualité, production, outillage, maintenance industrielle ou accompagnement terrain.
-    </div>
-
-  </main>
-
-</body>
-</html>
