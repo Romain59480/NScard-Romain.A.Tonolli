@@ -218,6 +218,44 @@
         inset 0 0 18px rgba(255, 255, 255, 0.12);
     }
 
+    .btn.fastt {
+      background:
+        linear-gradient(135deg, rgba(0, 255, 224, 0.96), rgba(255, 122, 26, 0.96));
+      color: #050608;
+      border: 1px solid rgba(255, 255, 255, 0.58);
+      box-shadow:
+        0 0 24px rgba(0, 255, 220, 0.26),
+        0 0 24px rgba(255, 122, 26, 0.18),
+        inset 0 0 18px rgba(255, 255, 255, 0.16);
+    }
+
+    .btn.fastt:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow:
+        0 0 34px rgba(0, 255, 220, 0.40),
+        0 0 34px rgba(255, 122, 26, 0.28),
+        inset 0 0 18px rgba(255, 255, 255, 0.18);
+    }
+
+    .fastt-highlight {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(0, 255, 220, 0.24);
+      background:
+        linear-gradient(135deg, rgba(0, 255, 220, 0.07), rgba(255, 122, 26, 0.07));
+      box-shadow: inset 0 0 22px rgba(255, 255, 255, 0.03);
+    }
+
+    .fastt-highlight strong {
+      color: #00ffe0;
+    }
+
+    .fastt-highlight span {
+      color: #ffb36a;
+      font-weight: bold;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -441,11 +479,41 @@
             aria-label="Télécharger le document justificatif d’activité intérim de Romain Tonolli">
             📎 Document recruteur : attestation d’activité intérim
           </a>
+
+          <a
+            class="btn fastt"
+            href="Attestation%20de%20Garantie%20int%C3%A9rimaire.pdf"
+            download="Attestation de Garantie intérimaire.pdf"
+            aria-label="Télécharger la Garantie du FASTT : Attestation de Garantie intérimaire">
+            🛡️ Garantie FASTT : attestation intérimaire
+          </a>
         </div>
 
         <p class="document-note">
           Document justificatif disponible au téléchargement direct pour vérification du parcours professionnel.
         </p>
+
+        <div class="fastt-highlight">
+          <p>
+            <strong>Garantie du FASTT disponible :</strong>
+            cette attestation complète mon dossier en apportant un élément de sérieux,
+            de stabilité et d’engagement dans mon parcours d’intérimaire.
+          </p>
+
+          <p>
+            Elle valorise mon respect du cadre professionnel,
+            ma capacité à honorer mes engagements contractuels
+            et mon inscription dans une démarche fiable auprès des employeurs,
+            des agences et des partenaires.
+          </p>
+
+          <p>
+            Le <span>FASTT</span> accompagne les salariés intérimaires dans leurs démarches
+            concrètes, notamment autour du logement, de la mobilité et de la sécurisation
+            du parcours. Je suis un professionnel mobile, sérieux, engagé et capable de s’adapter sans perdre
+            le sens du contrat.
+          </p>
+        </div>
       </div>
 
     </section>
@@ -656,3 +724,14 @@
           <li>Esprit analytique et curiosité technique.</li>
         </ul>
       </div>
+
+    </section>
+
+    <div class="footer">
+      Disponible pour un poste en qualité, production, outillage, maintenance industrielle ou accompagnement terrain.
+    </div>
+
+  </main>
+
+</body>
+</html>
