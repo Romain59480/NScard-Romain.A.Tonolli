@@ -4,25 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>NScard.R.A.Tonolli</title>
+  <title>NStudio | Comprendre le système. Développer l'humain.</title>
+
+  <meta name="description" content="NStudio — Agence de développement numérique fondée par Romain A. Tonolli. Communication web, intelligence artificielle, transmission des savoirs et développement humain." />
+
+  <meta property="og:title" content="NStudio — Comprendre le système. Développer l'humain." />
+  <meta property="og:description" content="Agence de développement numérique, communication web, IA et transmission des savoirs." />
+  <meta property="og:image" content="https://romain59480.github.io/NScard-Romain.A.Tonolli/R.A.Tonolli.pro.png" />
+  <meta property="og:url" content="https://romain59480.github.io/NScard-Romain.A.Tonolli/" />
+  <meta property="og:type" content="website" />
 
   <style>
     :root {
-      --bg-black: #050403;
-      --bg-deep: #0b0805;
-      --bg-royal: #14100a;
-      --card: rgba(15, 12, 8, 0.94);
-      --card-2: rgba(24, 18, 10, 0.92);
-      --gold: #d6a84f;
-      --gold-soft: #f3d38b;
-      --gold-deep: #8f6422;
-      --ivory: #f7f0df;
-      --smoke: #cfc3a8;
-      --shadow: rgba(0, 0, 0, 0.48);
-      --border: rgba(214, 168, 79, 0.34);
-      --border-soft: rgba(243, 211, 139, 0.18);
-      --accent: #f0c36a;
-      --dark-line: rgba(255, 255, 255, 0.06);
+      --black: #050505;
+      --obsidian: #0b0907;
+      --deep: #13100b;
+      --gold: #d4af37;
+      --gold-soft: #f2d17a;
+      --ivory: #f4efe3;
+      --muted: #b9ad94;
+      --line: rgba(212, 175, 55, 0.28);
+      --glass: rgba(255, 255, 255, 0.045);
+      --shadow: rgba(0, 0, 0, 0.55);
     }
 
     * {
@@ -37,12 +40,12 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 18% 8%, rgba(214, 168, 79, 0.18), transparent 28%),
-        radial-gradient(circle at 85% 2%, rgba(243, 211, 139, 0.10), transparent 28%),
-        radial-gradient(circle at 50% 100%, rgba(143, 100, 34, 0.16), transparent 42%),
-        linear-gradient(135deg, var(--bg-black), var(--bg-deep) 52%, #020201);
       color: var(--ivory);
+      background:
+        radial-gradient(circle at 50% -10%, rgba(212, 175, 55, 0.18), transparent 34%),
+        radial-gradient(circle at 10% 20%, rgba(242, 209, 122, 0.07), transparent 28%),
+        radial-gradient(circle at 90% 60%, rgba(212, 175, 55, 0.09), transparent 26%),
+        linear-gradient(135deg, var(--black), var(--obsidian) 48%, #030303);
       line-height: 1.65;
       overflow-x: hidden;
     }
@@ -52,9 +55,10 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(214, 168, 79, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(214, 168, 79, 0.045) 1px, transparent 1px);
-      background-size: 54px 54px;
+        linear-gradient(rgba(212, 175, 55, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.035) 1px, transparent 1px);
+      background-size: 74px 74px;
+      mask-image: radial-gradient(circle at center, black 0%, transparent 78%);
       pointer-events: none;
       z-index: -2;
     }
@@ -64,8 +68,8 @@
       position: fixed;
       inset: 0;
       background:
-        linear-gradient(180deg, transparent, rgba(0,0,0,0.28)),
-        radial-gradient(circle at center, transparent 35%, rgba(0,0,0,0.72));
+        radial-gradient(circle at center, transparent 38%, rgba(0,0,0,0.68)),
+        linear-gradient(180deg, transparent, rgba(0,0,0,0.42));
       pointer-events: none;
       z-index: -1;
     }
@@ -75,27 +79,34 @@
     }
 
     .page {
-      max-width: 1180px;
+      width: min(1180px, calc(100% - 34px));
       margin: auto;
-      padding: 32px 18px;
+      padding: 32px 0 42px;
+    }
+
+    .royal-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 30px 0;
+      opacity: 0.9;
     }
 
     .hero {
+      min-height: 86vh;
       display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 38px;
+      grid-template-columns: 360px 1fr;
+      gap: 44px;
       align-items: center;
-      min-height: 72vh;
-      padding: 42px;
-      border-radius: 30px;
+      padding: 48px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
       background:
-        linear-gradient(135deg, rgba(18, 14, 9, 0.97), rgba(6, 5, 4, 0.95)),
-        linear-gradient(45deg, rgba(214,168,79,0.05), transparent);
-      border: 1px solid var(--border);
+        linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+        radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.12), transparent 42%),
+        linear-gradient(135deg, rgba(13, 11, 8, 0.96), rgba(4, 4, 4, 0.94));
       box-shadow:
-        0 0 42px rgba(214, 168, 79, 0.14),
-        0 24px 60px rgba(0, 0, 0, 0.46),
-        inset 0 0 48px rgba(214, 168, 79, 0.055);
+        0 34px 80px var(--shadow),
+        inset 0 0 44px rgba(212, 175, 55, 0.06);
       position: relative;
       overflow: hidden;
     }
@@ -103,124 +114,127 @@
     .hero::before {
       content: "";
       position: absolute;
-      left: -140px;
-      bottom: -140px;
-      width: 340px;
-      height: 340px;
-      background: radial-gradient(circle, rgba(214, 168, 79, 0.19), transparent 68%);
-      filter: blur(8px);
+      width: 540px;
+      height: 540px;
+      border: 1px solid rgba(212, 175, 55, 0.14);
+      border-radius: 50%;
+      right: -180px;
+      top: -160px;
     }
 
     .hero::after {
-      content: "";
+      content: "1.618";
       position: absolute;
-      right: -110px;
-      top: -110px;
-      width: 340px;
-      height: 340px;
-      background: radial-gradient(circle, rgba(243, 211, 139, 0.20), transparent 64%);
-      filter: blur(10px);
+      right: 36px;
+      bottom: 24px;
+      color: rgba(212, 175, 55, 0.11);
+      font-size: 92px;
+      font-weight: 900;
+      letter-spacing: -7px;
+      pointer-events: none;
     }
 
-    .photo-panel {
+    .portrait-zone {
       position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
+      z-index: 2;
+      display: grid;
+      place-items: center;
     }
 
-    .photo-wrap {
-      width: 270px;
-      height: 270px;
-      border-radius: 32px;
-      padding: 5px;
+    .portrait-frame {
+      width: 320px;
+      height: 420px;
+      padding: 7px;
+      border-radius: 180px 180px 34px 34px;
       background:
-        conic-gradient(from 90deg, var(--gold-soft), var(--gold-deep), var(--gold), var(--gold-soft));
+        linear-gradient(135deg, var(--gold-soft), var(--gold), #80621c, var(--gold-soft));
       box-shadow:
-        0 0 28px rgba(214, 168, 79, 0.38),
-        0 0 58px rgba(243, 211, 139, 0.12);
+        0 0 38px rgba(212, 175, 55, 0.28),
+        0 18px 50px rgba(0,0,0,0.56);
       overflow: hidden;
     }
 
-    .photo-wrap img {
+    .portrait-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
-      background: #080604;
-      border-radius: 27px;
-      border: 4px solid #080604;
+      object-position: center top;
       display: block;
-      filter: contrast(1.04) saturate(0.96);
+      border-radius: 174px 174px 28px 28px;
+      background: #080808;
+      border: 5px solid #090806;
     }
 
     .hero-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 7px 13px;
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
       border-radius: 999px;
-      border: 1px solid rgba(214, 168, 79, 0.62);
       color: var(--gold-soft);
+      background: rgba(212, 175, 55, 0.06);
       font-size: 13px;
-      letter-spacing: 1.2px;
-      margin-bottom: 14px;
-      background: rgba(214, 168, 79, 0.07);
-      box-shadow: inset 0 0 18px rgba(214, 168, 79, 0.06);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 16px rgba(212, 175, 55, 0.8);
     }
 
     h1 {
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.03;
-      margin-bottom: 10px;
-      letter-spacing: -1px;
-      color: var(--ivory);
-      text-shadow: 0 0 22px rgba(214, 168, 79, 0.15);
+      font-size: clamp(50px, 8vw, 92px);
+      line-height: 0.92;
+      letter-spacing: -4px;
+      margin-bottom: 12px;
     }
 
-    .job {
-      color: var(--gold);
-      font-size: clamp(22px, 3vw, 32px);
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    .signature {
+    .subtitle {
+      font-size: clamp(22px, 3vw, 34px);
       color: var(--gold-soft);
-      font-weight: bold;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .baseline {
+      font-size: 20px;
+      color: var(--ivory);
+      margin-bottom: 22px;
+      font-weight: 700;
+    }
+
+    .manifesto {
+      max-width: 800px;
       font-size: 18px;
-      margin-bottom: 20px;
-      letter-spacing: 0.7px;
+      color: #e6dcc8;
+      margin-bottom: 22px;
     }
 
-    .tagline {
-      max-width: 840px;
-      color: var(--smoke);
-      font-size: 17px;
-      margin-bottom: 16px;
+    .credo-box {
+      border-left: 3px solid var(--gold);
+      padding: 18px 0 18px 22px;
+      margin: 22px 0;
+      color: var(--ivory);
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.06), transparent);
     }
 
-    .identity-line {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0 4px;
+    .credo-box strong {
+      color: var(--gold-soft);
     }
 
-    .identity-chip {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(214, 168, 79, 0.09);
-      border: 1px solid rgba(214, 168, 79, 0.34);
-      color: #f7deb0;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .buttons {
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -229,56 +243,101 @@
 
     .btn {
       text-decoration: none;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: bold;
-      color: #130d05;
-      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-      border: 1px solid rgba(255, 240, 190, 0.52);
-      box-shadow: 0 0 20px rgba(214, 168, 79, 0.24);
-      transition: 0.25s;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      min-height: 46px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      color: #100c04;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.22);
+      transition: 0.22s ease;
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 32px rgba(214, 168, 79, 0.42);
-    }
-
-    .btn:focus-visible {
-      outline: 2px solid var(--ivory);
-      outline-offset: 4px;
+      box-shadow: 0 0 34px rgba(212, 175, 55, 0.34);
     }
 
     .btn.secondary {
       background: transparent;
       color: var(--ivory);
-      border: 1px solid rgba(214, 168, 79, 0.70);
-      box-shadow: 0 0 16px rgba(214, 168, 79, 0.12);
+      border-color: rgba(212, 175, 55, 0.45);
     }
 
-    .btn.document {
-      background: linear-gradient(135deg, rgba(214, 168, 79, 0.94), rgba(143, 100, 34, 0.94));
-      color: #fff3d0;
-      border: 1px solid rgba(255, 226, 165, 0.65);
-      box-shadow:
-        0 0 18px rgba(214, 168, 79, 0.25),
-        inset 0 0 18px rgba(255, 255, 255, 0.08);
+    section {
+      margin-top: 26px;
     }
 
-    .btn.fastt {
+    .section-title {
+      text-align: center;
+      margin: 44px auto 24px;
+      max-width: 780px;
+    }
+
+    .section-title span {
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.04;
+      margin-top: 6px;
+      letter-spacing: -2px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 17px;
+    }
+
+    .pillars-orbit {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .pillar {
+      min-height: 230px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 999px 999px 26px 26px;
       background:
-        linear-gradient(135deg, rgba(243, 211, 139, 0.96), rgba(84, 58, 20, 0.96));
-      color: #fff5d7;
-      border: 1px solid rgba(255, 255, 255, 0.42);
-      box-shadow:
-        0 0 24px rgba(214, 168, 79, 0.26),
-        0 0 24px rgba(243, 211, 139, 0.12),
-        inset 0 0 18px rgba(255, 255, 255, 0.10);
+        radial-gradient(circle at 50% 0%, rgba(212,175,55,0.13), transparent 48%),
+        rgba(255,255,255,0.035);
+      box-shadow: 0 18px 38px rgba(0,0,0,0.30);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .pillar .number {
+      color: rgba(212,175,55,0.55);
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .pillar strong {
+      color: var(--gold-soft);
+      font-size: 19px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .pillar p {
+      color: #ddd3c0;
+      font-size: 15px;
     }
 
     .grid {
@@ -289,13 +348,13 @@
     }
 
     .card {
+      padding: 28px;
+      border-radius: 26px;
+      border: 1px solid var(--line);
       background:
-        linear-gradient(135deg, var(--card), var(--card-2));
-      border: 1px solid var(--border-soft);
-      border-radius: 22px;
-      padding: 26px;
-      box-shadow: 0 14px 34px var(--shadow);
-      transition: 0.25s;
+        linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025)),
+        rgba(10, 9, 7, 0.88);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.32);
       position: relative;
       overflow: hidden;
     }
@@ -304,41 +363,22 @@
       content: "";
       position: absolute;
       top: 0;
-      left: 0;
-      width: 86px;
-      height: 2px;
-      background: var(--gold);
-      box-shadow: 0 0 16px rgba(214, 168, 79, 0.72);
+      left: 28px;
+      right: 28px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.8;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(214, 168, 79, 0.42);
-      box-shadow: 0 0 30px rgba(214, 168, 79, 0.11);
+    .card h3 {
+      font-size: 23px;
+      color: var(--gold-soft);
+      margin-bottom: 12px;
     }
 
-    .full {
-      grid-column: 1 / -1;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(214, 168, 79, 0.28);
-      color: var(--ivory);
-    }
-
-    h3 {
-      color: var(--ivory);
-      font-size: 18px;
-      margin-top: 16px;
-      margin-bottom: 8px;
-    }
-
-    p {
-      margin-bottom: 13px;
-      color: var(--smoke);
+    .card p,
+    .card li {
+      color: #ded5c4;
     }
 
     ul {
@@ -347,105 +387,106 @@
 
     li {
       margin-bottom: 8px;
-      color: var(--smoke);
     }
 
-    .contact {
-      display: grid;
-      gap: 8px;
-      color: #eee3c8;
+    .full {
+      grid-column: 1 / -1;
     }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill {
-      padding: 8px 12px;
-      border-radius: 999px;
-      color: #fff1c9;
-      border: 1px solid rgba(214, 168, 79, 0.34);
-      background: rgba(214, 168, 79, 0.075);
-      font-size: 14px;
-    }
-
-    .pillars {
+    .services {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 12px;
+      gap: 16px;
+      margin-top: 24px;
     }
 
-    .pillar {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(214, 168, 79, 0.065);
-      border: 1px solid rgba(214, 168, 79, 0.22);
-      text-align: center;
+    .service {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      background: rgba(255,255,255,0.035);
+      min-height: 190px;
     }
 
-    .pillar strong {
+    .service h3 {
       color: var(--gold-soft);
-      display: block;
-      font-size: 17px;
-      margin-bottom: 6px;
-    }
-
-    .experience-title {
+      margin-bottom: 10px;
       font-size: 20px;
-      color: var(--ivory);
-      font-weight: bold;
-      margin-bottom: 4px;
     }
 
-    .date {
-      color: #ad9f80;
-      margin-bottom: 14px;
+    .service p {
+      color: #d8cfbd;
     }
 
-    .highlight {
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(214, 168, 79, 0.32);
+    .founder {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-panel {
+      text-align: center;
+      padding: 38px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
       background:
-        linear-gradient(135deg, rgba(214, 168, 79, 0.09), rgba(255, 255, 255, 0.025));
-      margin-top: 12px;
+        radial-gradient(circle at 50% 0%, rgba(212,175,55,0.14), transparent 48%),
+        rgba(255,255,255,0.035);
+      margin-top: 26px;
     }
 
-    .highlight strong {
-      color: var(--gold-soft);
+    .contact-panel h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      margin-bottom: 20px;
     }
 
     .footer {
+      color: var(--muted);
       text-align: center;
-      margin-top: 32px;
-      color: #ad9f80;
       font-size: 14px;
+      margin-top: 32px;
+      padding-bottom: 20px;
     }
 
-    @media (max-width: 920px) {
-      .hero {
+    @media (max-width: 980px) {
+      .hero,
+      .founder {
         grid-template-columns: 1fr;
         text-align: center;
+      }
+
+      .hero {
         padding: 30px;
-        min-height: auto;
       }
 
-      .photo-wrap {
-        width: 240px;
-        height: 240px;
+      .portrait-frame {
+        width: 260px;
+        height: 340px;
       }
 
-      .buttons,
-      .identity-line {
+      .credo-box {
+        text-align: left;
+      }
+
+      .actions {
         justify-content: center;
       }
 
-      .grid,
-      .pillars {
+      .pillars-orbit,
+      .services,
+      .grid {
         grid-template-columns: 1fr;
+      }
+
+      .pillar {
+        border-radius: 26px;
+        min-height: auto;
       }
 
       .btn {
@@ -456,291 +497,213 @@
 </head>
 
 <body>
-
   <main class="page">
 
-    <section class="hero">
-
-      <div class="photo-panel">
-        <div class="photo-wrap">
-          <img src="photo.jpg" alt="Photo de Romain Tonolli">
+    <section class="hero" id="accueil">
+      <div class="portrait-zone">
+        <div class="portrait-frame">
+          <img src="R.A.Tonolli.pro.png" alt="Portrait de Romain A. Tonolli, fondateur de NStudio">
         </div>
       </div>
 
       <div class="hero-content">
-        <div class="badge">NScard.R.A.Tonolli</div>
+        <div class="kicker">NStudio • Credo 1.618</div>
 
-        <h1>Romain Tonolli</h1>
+        <h1>NStudio</h1>
 
-        <div class="job">Technicien industriel polyvalent</div>
+        <div class="subtitle">Comprendre le système. Développer l'humain.</div>
 
-        <p class="tagline">
-          Technicien industriel formé sur le terrain, spécialisé en qualité, production,
-          outillage et maintenance. J’allie la rigueur du travail bien fait, la précision
-          technique, l’expérience humaine et une vraie capacité d’adaptation aux outils modernes.
+        <div class="baseline">Communication Web • Intelligence Artificielle • Transmission des savoirs</div>
+
+        <p class="manifesto">
+          NStudio est une agence de développement numérique fondée sur une conviction simple :
+          l'humain doit grandir en même temps que les systèmes qu'il construit.
         </p>
 
-        <div class="buttons">
-          <a
-            class="btn"
-            href="mailto:romain.tonolli@aol.fr"
-            aria-label="Contacter Romain Tonolli par email">
-            Me contacter
-          </a>
-
-          <a
-            class="btn secondary"
-            href="tel:+33601840379"
-            aria-label="Appeler Romain Tonolli">
-            Appeler
-          </a>
-
-          <a
-            class="btn"
-            href="CV_Romain_Tonolli_FINAL.pdf"
-            download
-            aria-label="Télécharger le CV PDF de Romain Tonolli">
-            Télécharger mon CV PDF
-          </a>
-
-          <a
-            class="btn secondary"
-            href="attestation_activite_interim_Romain-TONOLLI_29042026.pdf"
-            download
-            aria-label="Télécharger l’attestation d’activité intérim de Romain Tonolli">
-            📄 Télécharger mon attestation
-          </a>
-
-          <a
-            class="btn document"
-            href="attestation_activite_interim_Romain-TONOLLI_29042026.pdf"
-            download="attestation_activite_interim_Romain-TONOLLI_29042026.pdf"
-            aria-label="Télécharger le document justificatif d’activité intérim de Romain Tonolli">
-            📎 Document recruteur : attestation d’activité intérim
-          </a>
+        <div class="credo-box">
+          <p><strong>Credo 1.618</strong></p>
+          <p>Comprendre avant d'agir. Structurer avant de produire.</p>
+          <p>Transmettre avant de remplacer. Développer avant de contrôler.</p>
         </div>
 
-        <p class="document-note">
-          Document justificatif disponible au téléchargement direct pour vérification du parcours professionnel.
-        </p>
+        <div class="actions">
+          <a class="btn" href="#credo">Découvrir le Credo</a>
+          <a class="btn secondary" href="CV_Romain_Tonolli_Classic_Premium_2026.pdf" download>Télécharger le CV</a>
+          <a class="btn secondary" href="mailto:romain.tonolli@aol.fr">Contacter NStudio</a>
+        </div>
       </div>
-
     </section>
 
-    <section class="grid">
+    <div class="royal-line"></div>
 
-      <div class="card">
-        <h2>Contact</h2>
-        <div class="contact">
-          <div>📍 Valenciennes / mobilité professionnelle</div>
-          <div>📧 romain.tonolli@aol.fr</div>
-          <div>📞 06 01 84 03 79</div>
-          <div>🚗 Permis B + véhicule</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Profil</h2>
+    <section id="credo">
+      <div class="section-title">
+        <span>Architecture humaine</span>
+        <h2>Les 5 Piliers Fondateurs</h2>
         <p>
-          Je suis un professionnel sérieux, autonome et curieux, avec une expérience solide
-          en environnement industriel exigeant.
-        </p>
-        <p>
-          Je suis habitué aux procédures qualité, à la précision, à la résolution de problèmes
-          techniques et au travail bien fait.
+          Le carré enferme. La sphère relie. La spirale élève.
+          NStudio transforme les systèmes rigides en environnements vivants.
         </p>
       </div>
 
-      <div class="card full">
-        <h2>Vision & état d’esprit</h2>
-        <p>
-          Je suis conscient d’être issu d’une génération qui a connu une évolution forte
-          du monde du travail et des technologies. J’ai appris à construire avec des bases solides,
-          où l’effort, la rigueur et le travail bien fait étaient essentiels.
-        </p>
-        <p>
-          Aujourd’hui, je fais le choix de ne pas rester figé dans cette expérience,
-          mais de la faire évoluer. Je développe en permanence ma capacité d’adaptation
-          aux nouveaux systèmes technologiques, en combinant mon vécu, mon intelligence
-          d’analyse et ma volonté de progresser.
-        </p>
-        <p>
-          Je cherche à avancer avec équilibre : garder ce qui fait la force d’un professionnel
-          expérimenté, tout en intégrant les outils modernes pour rester performant,
-          efficace et en constante évolution.
-        </p>
-      </div>
-
-      <div class="card full">
-        <h2>Compétences clés</h2>
-
-        <div class="skills">
-          <span class="skill">Contrôle qualité</span>
-          <span class="skill">Production industrielle</span>
-          <span class="skill">Outillage</span>
-          <span class="skill">Maintenance de moules</span>
-          <span class="skill">Soudage laser</span>
-          <span class="skill">Cire perdue</span>
-          <span class="skill">Presses d’injection</span>
-          <span class="skill">Secteur médical</span>
-          <span class="skill">Hardware</span>
-          <span class="skill">Intelligence artificielle</span>
-          <span class="skill">Pédagogie</span>
-          <span class="skill">Analyse comportementale</span>
-        </div>
-      </div>
-
-      <div class="card full">
-        <h2>Expérience principale</h2>
-
-        <div class="experience-title">
-          Technicien outilleur / Opérateur atelier cire
+      <div class="pillars-orbit">
+        <div class="pillar">
+          <div class="number">01</div>
+          <strong>Conscience</strong>
+          <p>Observer le réel avant d'intervenir. Comprendre les forces, les limites et les potentiels cachés.</p>
         </div>
 
-        <div class="date">
-          ATS Groupe Marles – Alès | 2023 – 2026
+        <div class="pillar">
+          <div class="number">02</div>
+          <strong>Évolution</strong>
+          <p>Remplacer la répétition par une progression continue des méthodes et des compétences.</p>
         </div>
 
-        <p>
-          J’ai évolué en interne après avoir été formé sur plusieurs postes de fabrication
-          dans un atelier spécialisé dans les prothèses chirurgicales par procédé de cire perdue.
-          Cette progression m’a permis de passer d’un poste d’opérateur polyvalent à des compétences
-          de technicien outilleur terrain.
-        </p>
+        <div class="pillar">
+          <div class="number">03</div>
+          <strong>Transmission</strong>
+          <p>Faire circuler le savoir pour rendre les personnes plus autonomes, plus fortes et plus conscientes.</p>
+        </div>
 
-        <h3>Fabrication & procédé cire perdue</h3>
+        <div class="pillar">
+          <div class="number">04</div>
+          <strong>Coopération</strong>
+          <p>Relier les talents, les outils, les idées et les systèmes pour produire une intelligence collective.</p>
+        </div>
 
-        <ul>
-          <li>Fabrication et préparation de pièces en cire pour prothèses chirurgicales.</li>
-          <li>Travail sur le procédé de cire perdue destiné à la coulée de chrome cobalt.</li>
-          <li>Création de modèles en cire servant à former l’espace moulé dans le revêtement DIP.</li>
-          <li>Préparation des moules recevant ensuite la coulée de métal en fusion.</li>
-          <li>Respect des exigences qualité liées au secteur médical.</li>
-        </ul>
-
-        <h3>Outillage & maintenance de moules</h3>
-
-        <ul>
-          <li>Supervision de plusieurs postes de fabrication en atelier cire.</li>
-          <li>Maintenance complète de moules d’injection avec appareillage complet.</li>
-          <li>Démontage, nettoyage, réparation et remontage des moules.</li>
-          <li>Réparation des mottes et empreintes moulées de différentes prothèses.</li>
-          <li>Soudage laser pour ajout de matière et réajustement de précision.</li>
-          <li>Essais de conformité sur presses d’injection.</li>
-          <li>Diagnostic et correction des défauts liés aux moules et à la production.</li>
-        </ul>
+        <div class="pillar">
+          <div class="number">05</div>
+          <strong>Expansion</strong>
+          <p>Créer des structures capables de grandir avec les êtres humains qui les portent.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="card full">
-        <h2>Compétences industrielles</h2>
-
-        <ul>
-          <li>Contrôle qualité industriel : visuel, dimensionnel, traçabilité.</li>
-          <li>Production industrielle en atelier technique.</li>
-          <li>Maintenance, démontage, nettoyage et remontage de moules d’injection.</li>
-          <li>Réparation et ajustement d’empreintes de moules.</li>
-          <li>Soudage laser pour ajout de matière et correction de précision.</li>
-          <li>Essais et validation conformité sur presses d’injection.</li>
-          <li>Procédé de fonderie à la cire perdue.</li>
-          <li>Travail sur pièces destinées au secteur médical.</li>
-          <li>Respect des procédures, des consignes qualité et des standards de fabrication.</li>
-          <li>Compréhension rapide des environnements industriels exigeants.</li>
-        </ul>
-      </div>
-
-      <div class="card full">
-        <h2>Compétences numériques & informatique</h2>
-
+    <section>
+      <div class="section-title">
+        <span>Vision</span>
+        <h2>Du carré vers la sphère</h2>
         <p>
-          Je possède une forte appétence pour l’informatique, aussi bien en hardware
-          qu’en software. Je suis capable de monter, diagnostiquer et optimiser
-          des systèmes informatiques complets.
-        </p>
-
-        <p>
-          Je m’intéresse également aux technologies d’intelligence artificielle,
-          que j’utilise comme outil d’analyse, d’apprentissage et d’amélioration continue
-          dans mon quotidien professionnel.
-        </p>
-
-        <ul>
-          <li>Montage et maintenance informatique hardware.</li>
-          <li>Diagnostic de pannes systèmes.</li>
-          <li>Utilisation avancée des outils numériques.</li>
-          <li>Compréhension et utilisation des outils d’intelligence artificielle.</li>
-          <li>Adaptation rapide aux nouveaux environnements technologiques.</li>
-          <li>Capacité à apprendre seul, tester, comprendre et optimiser des outils numériques.</li>
-        </ul>
-      </div>
-
-      <div class="card full">
-        <h2>Approche moderne & outils numériques</h2>
-
-        <p>
-          Je m’inscris dans une démarche d’évolution constante, en intégrant les outils
-          numériques modernes dans mon quotidien. L’utilisation des intelligences artificielles
-          me permet d’analyser, structurer et améliorer mes compétences de manière autonome.
-        </p>
-
-        <p>
-          Cette approche me permet de prendre du recul sur mon travail, d’optimiser mes méthodes
-          et de développer une vision plus globale des systèmes dans lesquels j’évolue.
-          Je considère ces outils comme un levier d’amélioration continue, au service de la performance,
-          de la compréhension et de la progression professionnelle.
+          NStudio ne conçoit pas le numérique comme un simple outil de production.
+          Nous le concevons comme un espace de développement humain, stratégique et créatif.
         </p>
       </div>
 
-      <div class="card full">
-        <h2>Approche humaine & pédagogique</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Le système carré</h3>
+          <p>
+            Le système classique compartimente, encadre, spécialise et réduit progressivement l'humain
+            à une fonction productive.
+          </p>
+          <p>
+            Il apprend la résignation, l'attente, la répétition et l'effacement progressif du potentiel.
+          </p>
+        </div>
 
+        <div class="card">
+          <h3>La logique sphérique</h3>
+          <p>
+            La sphère représente un modèle vivant : chaque individu peut développer plusieurs dimensions
+            de lui-même et contribuer à l'expansion de l'ensemble.
+          </p>
+          <p>
+            La performance devient alors humaine, technique, relationnelle et évolutive.
+          </p>
+        </div>
+
+        <div class="card full">
+          <h3>La spirale d'apprentissage</h3>
+          <p>
+            L'évolution ne suit pas une ligne droite. Elle fonctionne comme une spirale :
+            on revient sur les mêmes sujets avec une compréhension plus haute, une méthode plus précise
+            et une capacité de transmission plus forte.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <span>Offre</span>
+        <h2>Ce que construit NStudio</h2>
         <p>
-          Formé en éthologie et en comportementalisme canin, j’ai développé une capacité
-          d’observation fine des comportements et des mécanismes d’apprentissage.
-          Cette compétence me permet aujourd’hui d’avoir une approche pédagogique claire,
-          structurée et efficace dans un environnement industriel.
-        </p>
-
-        <p>
-          Je suis capable de comprendre rapidement les situations, d’analyser les réactions humaines
-          et de transmettre un savoir de manière adaptée. Cette sensibilité humaine est un véritable
-          atout pour travailler en équipe, accompagner une personne en formation et évoluer
-          dans des environnements exigeants.
+          Des présences numériques crédibles, des systèmes de communication clairs,
+          et des outils augmentés par l'intelligence artificielle.
         </p>
       </div>
 
-      <div class="card">
-        <h2>Formation</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Communication Web</h3>
+          <p>Sites vitrines, pages professionnelles, identité numérique et structuration du message.</p>
+        </div>
 
-        <ul>
-          <li>Bac Pro Productique Mécanique.</li>
-          <li>BEP / CAP Microtechnique et Micro-mécanique.</li>
-          <li>Formation relation client ENGIE.</li>
-          <li>Formation terrain en outillage et atelier cire.</li>
-          <li>Formation en éthologie / comportementalisme canin.</li>
-        </ul>
+        <div class="service">
+          <h3>Intelligence Artificielle</h3>
+          <p>Utilisation de l'IA pour analyser, rédiger, organiser, produire et améliorer les systèmes.</p>
+        </div>
+
+        <div class="service">
+          <h3>Présence digitale</h3>
+          <p>Transformer un parcours, une activité ou une vision en présence lisible et crédible.</p>
+        </div>
+
+        <div class="service">
+          <h3>Transmission</h3>
+          <p>Créer des supports, méthodes et contenus qui aident les personnes à comprendre et progresser.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <span>Fondateur</span>
+        <h2>Romain A. Tonolli</h2>
+        <p>Responsable du Développement Terrain — Fondateur de NStudio</p>
       </div>
 
-      <div class="card">
-        <h2>Atouts</h2>
+      <div class="founder">
+        <div class="card">
+          <h3>Parcours</h3>
+          <p>
+            Issu du monde industriel, Romain A. Tonolli a construit son expertise au contact du réel :
+            production, qualité, maintenance, outillage, fabrication médicale et amélioration continue.
+          </p>
+          <p>
+            Son parcours l'a conduit à relier l'expérience terrain, l'observation des systèmes,
+            la transmission des savoirs et les outils numériques modernes.
+          </p>
+        </div>
 
-        <ul>
-          <li>Rigueur et sens du détail.</li>
-          <li>Autonomie sur poste technique.</li>
-          <li>Bonne capacité d’apprentissage.</li>
-          <li>Culture du travail bien fait.</li>
-          <li>À l’aise avec l’informatique et les systèmes.</li>
-          <li>Capacité à transmettre et former.</li>
-          <li>Esprit analytique et curiosité technique.</li>
-        </ul>
+        <div class="card">
+          <h3>Signature</h3>
+          <ul>
+            <li>Comprendre avant d'agir.</li>
+            <li>Structurer avant de produire.</li>
+            <li>Transmettre avant de remplacer.</li>
+            <li>Développer avant de contrôler.</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
+    <section class="contact-panel" id="contact">
+      <h2>Entrer dans NStudio</h2>
+      <p>
+        Pour un projet web, une présence digitale, une stratégie IA ou une structure de transmission.
+      </p>
+
+      <div class="actions" style="justify-content:center;">
+        <a class="btn" href="mailto:romain.tonolli@aol.fr">romain.tonolli@aol.fr</a>
+        <a class="btn secondary" href="tel:+33601840379">+33 6 01 84 03 79</a>
+      </div>
     </section>
 
     <div class="footer">
-      Disponible pour un poste en qualité, production, outillage, maintenance industrielle ou accompagnement terrain.
+      NStudio — Credo 1.618 — Comprendre le système. Développer l'humain.
     </div>
 
   </main>
-
 </body>
 </html>
